@@ -1,2 +1,2 @@
-# Proyecto-Lum-a
-Este repositorio es diseñado para la asignatura de programación y diseño de aplicaciones
+# Proyecto-Lumea
+Este desarrollo web esta diseñado para ofrecer alimento premium para perros y gatos.
