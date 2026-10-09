@@ -1,25 +1,35 @@
+/*RESET*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/*Desplazamiento suave del html*/
 html {
     scroll-behavior: smooth;
 }
 
-
+/*Configuraciones generales*/
 body { margin:0;
-      font-family: 'Times New Roman', Times, serif;
+      font-family: serif;
       color: #181717 ;
       background-color: #873434;
       overflow-x: hidden ;
 }
 
+.lora- {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Contenedor general*/
 .container { width: min(1100px, calc(100% - 2rem)); 
 margin: 0 auto; 
 }
 
+/*Configuraciones para el header- Encabezado */
 .sitio-header { 
     position: sticky;
     top: 0;
@@ -29,6 +39,7 @@ margin: 0 auto;
     border-bottom: 1px solid var(--line);
 }
 
+/*Configuraciones internas del encabezado-header-inner*/
 .header-inner {
     display: flex;
   align-items: center;
@@ -40,9 +51,81 @@ margin: 0 auto;
 .logo {
     display: flex;
   align-items: center;
-  gap: .6rem;
-  font-family: "Fraunces", serif;
+  gap: 0.6rem;
+  font-family: 'Lora', serif;
   font-weight: 700;
   font-size: 1.1rem;
-  color: rgb(114, 56, 56);
+  color: rgb(201, 60, 60);
+  text-decoration:none;
 }
+
+/*listas*/
+ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+/*Enlaces */
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/*Menú principal de navegación*/
+.main-nav {
+    display: none;
+    align-items:center;
+    gap:1.5rem;
+}
+
+/*Lista sea horizontal*/
+.main-nav ul {
+    display:flex;
+    gap: 1.5rem;
+    align-items:center;
+}
+
+.main.nav a {
+    font-weight: 600;
+    transition: color .2s ease;
+}
+
+.main-nav a:hover {
+    color: #f30d0d
+}
+
+.menu-toggle {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid red;
+  background: #fff;
+  color: rgb(188, 59, 59)
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+.mobile-nav {
+  max-height: 0;
+  overflow: hidden;
+  border-top: rgb(22, 22, 22);
+  background: white;
+  transition: max-height .28s ease;
+}
+.mobile-nav.open { max-height: 360px; }
+.mobile-nav ul { 
+    display: flex; flex-direction: column; gap: .3rem; padding: 1rem 1.25rem; }
+.mobile-nav li a { 
+    display: block; padding: .7rem .5rem; border-radius: .6rem; font-weight: 600; }
+
+
+
+@media (min-width: 768px) {
+  .main-nav { display: flex; }
+  .menu-toggle, .mobile-nav { display: none; }
+}
+
