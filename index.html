@@ -16,6 +16,8 @@
   <meta name="author" content="Fernando Pérez Torres">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
@@ -88,11 +90,66 @@
 </header>
 
   <main> 
+    <!--SECCIÓN PARA EL CARRUSEL-->
 
-<h1>This is a Heading</h1>
+    <section id="carrusel" class="carousel-section container"> 
+       <h2> Venta de alimento para mascotas</h2>
+       <div class="carousel-track" id="carouseltrackebc">
+        <!--Primera imagen del hero-->
+          <div class="carousel-slide">
+              <img src="img/hero1.jpg" alt="imagen LUMEA hero">
+
+          </div>
+        <!--Segunda imagen del hero-->
+
+          <div class="carousel-slide">
+              <img src="img/hero2.jpg" alt="imagen LUMEA1 hero">
+
+          </div>
+        <!--Tercera imagen del hero-->
+
+           <div class="carousel-slide">
+              <img src="img/hero3.jpg" alt="imagen LUMEA2 hero">
+
+          </div>
+
+       </div>
+
+    </section>
+
+
 <p>This is a paragraph.</p>
 
   </main>
+
+  <footer>
+  <div class="footer-social">
+    <div class="container social-icons">
+      <a href="https://www.facebook.com/?locale=es_LA" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+      <a href="https://www.linkedin.com/" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a href="https://x.com/" aria-label="X (Twitter)">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      &copy; <span id="anio"></span> LUMEA - Todos los derechos reservados
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 
 </body>
 </html>
