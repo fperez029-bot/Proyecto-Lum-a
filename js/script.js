@@ -1,0 +1,135 @@
+document.addEventListener('DOMContentLoaded', () => {
+    /* MENÚ MÓVIL DESPLEGABLE */
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = menuToggle ? menuToggle.querySelector('i') : null;
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            
+            menuToggle.setAttribute('aria-expanded', isOpen);
+            menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+            if (menuIcon) {
+                if (isOpen) {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                } else {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
+            }
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Abrir menú');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        });
+    }
+
+    /* CARRUSEL INTERACTIVO CON AUTOPLAY */
+    const carouselTrack = document.getElementById('carouseltrackebc');
+    const slides = document.querySelectorAll('#carouseltrackebc .carousel-slide');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    const dots = document.querySelectorAll('#carousel-dots .dot');
+    
+    let currentSlide = 0;
+    let autoPlayTimer = null;
+    const totalSlides = slides.length;
+
+    // Actualizar posición del carrusel y dots
+    function updateCarousel(slideIndex) {
+        if (!carouselTrack || totalSlides === 0) return;
+
+        if (slideIndex >= totalSlides) {
+            currentSlide = 0;
+        } else if (slideIndex < 0) {
+            currentSlide = totalSlides - 1;
+        } else {
+            currentSlide = slideIndex;
+        }
+
+        // Transición de desplazamiento
+        carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+        // Actualizar dots activos
+        dots.forEach((dot, idx) => {
+            if (idx === currentSlide) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    // Funciones de Autoplay
+    function startAutoPlay() {
+        if (totalSlides > 1 && !autoPlayTimer) {
+            autoPlayTimer = setInterval(() => {
+                updateCarousel(currentSlide + 1);
+            }, 5000); // Cambia cada 5 segundos
+        }
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+        }
+    }
+
+    function restartAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+
+    // Eventos de botones
+    if (btnNext) {
+        btnNext.addEventListener('click', () => {
+            updateCarousel(currentSlide + 1);
+            restartAutoPlay();
+        });
+    }
+
+    if (btnPrev) {
+        btnPrev.addEventListener('click', () => {
+            updateCarousel(currentSlide - 1);
+            restartAutoPlay();
+        });
+    }
+
+    // Eventos de dots
+    dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => {
+            updateCarousel(idx);
+            restartAutoPlay();
+        });
+    });
+
+    // Inicialización del carrusel y hover
+    if (carouselTrack && totalSlides > 0) {
+        updateCarousel(0);
+        startAutoPlay();
+
+        const heroElement = document.getElementById('inicio');
+        if (heroElement) {
+            heroElement.addEventListener('mouseenter', stopAutoPlay);
+            heroElement.addEventListener('mouseleave', startAutoPlay);
+        }
+    }
+
+    /* AÑO DINÁMICO FOOTER */
+    const anioSpan = document.getElementById('anio');
+    if (anioSpan) {
+        anioSpan.textContent = new Date().getFullYear();
+    }
+});

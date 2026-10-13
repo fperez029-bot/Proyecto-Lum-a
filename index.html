@@ -1,155 +1,206 @@
 <!DOCTYPE html>
-<!-- El Doctype indica el tipo de documento HTML -->
-<!-- Nombre: Fernando Pérez-->
-<!-- PROYECTO para ENTREGABLE 2 Y 3-->
-<!-- Lumea -->
+<!-- Nombre: Fernando Pérez Torres -->
+<!-- PROYECTO LUMEA - ALIMENTO PREMIUM PARA MASCOTAS -->
 <html lang="es">
-<!-- Se usa para el lenguaje en que tendré el código de la página web-->
 
 <head>
-<!-- Es utilizado para los metadatos-->
+    <meta charset="UTF-8">
+    <meta name="description" content="LUMEA - Nutrición y alimento premium para perros y gatos. Formulación científica y natural por Fernando Pérez Torres.">
+    <meta name="keywords" content="LUMEA, Alimento Mascotas, Nutrición Canina, Nutrición Felina, Croquetas Premium, Fernando Pérez Torres">
+    <meta name="author" content="Fernando Pérez Torres">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Es la configuración de toda la página web-->
- <meta charset="UTF-8">
-  <meta name="description" content="Venta de Alimento premium para mascotas">
-  <meta name="keywords" content="Alimento, Juguetes, Accesorios, Petshop, Comida seca y húmeda">
-  <meta name="author" content="Fernando Pérez Torres">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/style.css">
-<title>LUMEA | Alimento PREMIUM para Mascotas</title>
-<!-- El tag de title es para como quiero que se muestre en la web-->
+    <!-- Archivo de Estilos Externo -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>LUMEA | Nutrición Premium para Mascotas</title>
 </head>
 
-
 <body>
-<!-- Donde inicia el cuerpo de mi página web-->
 
-<!-- ENCABEZADO - HEADER -->
-<header class="sitio-header">
-    <!-- Esto es únicamente para el logo-->
-  <div class = "container header-inner"> 
-    <a href="#inicio" class="logo"> 
-        <span class="logo-icono">🐈</span>
-        LUMEA
+    <!-- ENCABEZADO / HEADER -->
+    <header class="sitio-header">
+        <div class="container header-inner">
+            <a href="#inicio" class="logo">
+                <span class="logo-icono">🐾❤️</span>
+                <span class="logo-texto">LUMEA</span>
+            </a>
 
-    </a>
+            <!-- Navegación Principal -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto" class="btn-contacto">Contactar</a></li>
+                </ul>
+            </nav>
 
-    <nav class="main-nav">
-       <ul>
-        <li>
-            <a href="#inicio">Inicio</a>
-        </li>
+            <!-- Botón Menú Móvil -->
+            <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
 
-        <li> 
-         <a href="#servicios">Servicios</a>
-          </li>
- 
-          <li> 
-         <a href="#Nosotros">Nosotros</a>
-          </li>
+        <!-- Navegación Móvil -->
+        <nav id="mobile-menu" class="mobile-nav">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contactar</a></li>
+            </ul>
+        </nav>
+    </header>
 
-           <li> 
-         <a href="#Contacto">Contacto</a>
-          </li>
+    <!-- INICIO MAIN (PRINCIPAL) -->
+    <main>
 
+        <!-- HERO / CARRUSEL INTERACTIVO DE 3 IMÁGENES -->
+        <section id="inicio" class="hero-section">
+            <div class="carousel-track" id="carouseltrackebc">
 
-       </ul>
+                <!-- Diapositiva 1 -->
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1600&q=80" alt="LUMEA Nutrición Canina Premium">
+                    <div class="slide-overlay">
+                        <span class="badge">Nutrición de Élite</span>
+                        <h1>Amor Supremo <span class="highlight-red">Para Tu Mascota</span></h1>
+                        <p>Formulaciones holísticas de alta proteína que transforman la vitalidad y pelaje de tus compañeros.</p>
+                        <a href="#productos" class="btn-hero">Ver Catálogo</a>
+                    </div>
+                </div>
 
-    </nav>
+                <!-- Diapositiva 2 -->
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1600&q=80" alt="LUMEA Alimento Felino Premium">
+                    <div class="slide-overlay">
+                        <span class="badge badge-yellow">100% Ingredientes Naturales</span>
+                        <h1>Sabor e Inmunidad <span class="highlight-red">En Cada Croqueta</span></h1>
+                        <p>Recetas balanceadas con carne fresca, superalimentos y cero rellenos artificiales.</p>
+                        <a href="#productos" class="btn-hero">Cotizar Pedido</a>
+                    </div>
+                </div>
 
-    <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">☰</button>
-    </div>
+                <!-- Diapositiva 3 -->
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1600&q=80" alt="LUMEA Salud Mascota">
+                    <div class="slide-overlay">
+                        <span class="badge">Garantía LUMEA</span>
+                        <h1>Vida Larga y <span class="highlight-red">Saludable</span></h1>
+                        <p>Nutrición científica desarrollada bajo el liderazgo y pasión de Fernando Pérez Torres.</p>
+                        <a href="#nosotros" class="btn-hero">Conócenos</a>
+                    </div>
+                </div>
 
-    <nav id="mobile-menu" class="mobile-nav">
-      <ul>
-       <li>
-            <a href="#inicio">Inicio</a>
-        </li>
+            </div>
 
-        <li> 
-         <a href="#servicios">Servicios</a>
-          </li>
- 
-          <li> 
-         <a href="#Nosotros">Nosotros</a>
-          </li>
+            <!-- Botones de Navegación del Carrusel -->
+            <button id="btn-prev" class="carousel-arrow prev" aria-label="Imagen anterior">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button id="btn-next" class="carousel-arrow next" aria-label="Imagen siguiente">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
 
-           <li> 
-         <a href="#Contacto">Contacto</a>
-          </li>
+            <!-- Puntos Indicadores -->
+            <div class="carousel-dots" id="carousel-dots">
+                <button class="dot active" aria-label="Ir a diapositiva 1"></button>
+                <button class="dot" aria-label="Ir a diapositiva 2"></button>
+                <button class="dot" aria-label="Ir a diapositiva 3"></button>
+            </div>
+        </section>
 
-      </ul>
-     
-    </nav>
+        <!-- SECCIÓN DE PRODUCTOS / SERVICIOS -->
+        <section id="productos" class="servicios-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>NUESTROS PRODUCTOS</h2>
+                    <h3>Líneas de Nutrición Especializada</h3>
+                </div>
 
-</header>
+                <div class="cards-grid">
+                    <!-- Tarjeta 1 -->
+                    <div class="card">
+                        <div class="card-icon red"><i class="fa-solid fa-dog"></i></div>
+                        <h4>LUMEA Adult Dog Ultra</h4>
+                        <p>Fórmula de proteina libre de granos con cordero y salmón, diseñada para mantener energía vital y articulaciones fuertes.</p>
+                    </div>
 
-  <main> 
-    <!--SECCIÓN PARA EL CARRUSEL-->
+                    <!-- Tarjeta 2 -->
+                    <div class="card">
+                        <div class="card-icon red"><i class="fa-solid fa-cat"></i></div>
+                        <h4>LUMEA Cat Instinct</h4>
+                        <p>Alimento alto en taurina y omegas, perfecto para la salud digestiva, renal y un pelaje sedoso en felinos.</p>
+                    </div>
 
-    <section id="carrusel" class="carousel-section container"> 
-       <h2> Venta de alimento para mascotas</h2>
-       <div class="carousel-track" id="carouseltrackebc">
-        <!--Primera imagen del hero-->
-          <div class="carousel-slide">
-              <img src="img/hero1.jpg" alt="imagen LUMEA hero">
+                    <!-- Tarjeta 3 -->
+                    <div class="card">
+                        <div class="card-icon yellow"><i class="fa-solid fa-shield-heart"></i></div>
+                        <h4>LUMEA Care & Puppy</h4>
+                        <p>Nutrición enfocada en cachorros y etapas sénior con probióticos, vitaminas y antioxidantes de apoyo inmunológico.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-          </div>
-        <!--Segunda imagen del hero-->
+        <!-- SECCIÓN NOSOTROS -->
+        <section id="nosotros" class="nosotros-section">
+            <div class="container nosotros-inner">
+                <div class="nosotros-img">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=80" alt="LUMEA Historia y Mascotas">
+                </div>
 
-          <div class="carousel-slide">
-              <img src="img/hero2.jpg" alt="imagen LUMEA1 hero">
+                <div class="nosotros-info">
+                    <h2>SOBRE NOSOTROS</h2>
+                    <h3>Apasionados por la salud, vitalidad y felicidad de tus mascotas.</h3>
+                    <p>En <strong>LUMEA</strong>, bajo la dirección de Fernando Pérez Torres, combinamos innovación biológica y amor genuino por los animales para crear la mejor experiencia en nutrición premium.</p>
+                    <p>Nuestras recetas son elaboradas con ingredientes seleccionados de primera calidad, asegurando que cada bocado contribuya al bienestar integral de tu perro o gato.</p>
 
-          </div>
-        <!--Tercera imagen del hero-->
+                    <div class="stats">
+                        <div class="stat-box">
+                            <span class="stat-num red">+10K</span>
+                            <span class="stat-lbl">Mascotas Felices</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num yellow">100%</span>
+                            <span class="stat-lbl">Natural</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-           <div class="carousel-slide">
-              <img src="img/hero3.jpg" alt="imagen LUMEA2 hero">
+    </main>
 
-          </div>
+    <!-- FOOTER / CONTACTO -->
+    <footer id="contacto">
+        <div class="footer-social">
+            <div class="container social-icons">
+                <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://x.com/" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
 
-       </div>
+        <div class="footer-bottom">
+            <div class="container">
+                &copy; <span id="anio"></span> LUMEA - Fernando Pérez Torres. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
 
-    </section>
-
-
-<p>This is a paragraph.</p>
-
-  </main>
-
-  <footer>
-  <div class="footer-social">
-    <div class="container social-icons">
-      <a href="https://www.facebook.com/?locale=es_LA" aria-label="Facebook">
-        <i class="fa-brands fa-facebook-f"></i>
-      </a>
-      <a href="https://www.instagram.com/" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-      <a href="https://www.youtube.com/" aria-label="YouTube">
-        <i class="fa-brands fa-youtube"></i>
-      </a>
-      <a href="https://www.linkedin.com/" aria-label="LinkedIn">
-        <i class="fa-brands fa-linkedin-in"></i>
-      </a>
-      <a href="https://x.com/" aria-label="X (Twitter)">
-        <i class="fa-brands fa-x-twitter"></i>
-      </a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container">
-      &copy; <span id="anio"></span> LUMEA - Todos los derechos reservados
-    </div>
-  </div>
-</footer>
-
-<script src="js/script.js"></script>
-
+    <!-- Archivo JS Externo -->
+    <script src="js/script.js"></script>
 </body>
+
 </html>
